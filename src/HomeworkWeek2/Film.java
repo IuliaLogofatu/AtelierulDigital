@@ -1,18 +1,40 @@
 package HomeworkWeek2;
 
 public class Film {
-    protected  int anAparitie;
-    protected String nume;
-    protected Actor[] actori;
+    private Integer anAparitie;
+    private String name;
+    private Actor[] actors;
 
-    public Film(int anAparitie, String nume, Actor[] actori) {
+    public Film(Integer anAparitie, String name, Actor[] actors) {
         this.anAparitie = anAparitie;
-        this.nume = nume;
-        this.actori = actori;
+        this.name = name;
+        this.actors = actors;
     }
 
-    public String toString(){
-        return "\n Numele filmului: "+ this.nume + "\n Anul aparitiei: "+this.anAparitie +" \n Actori: "+ this.actori;
-
+    public String getName() {
+        return name;
     }
+
+    public Actor[] getActors() {
+        return actors;
+    }
+
+    public Actor getActorByName(String actorName){
+        for(Actor actor:actors){
+            if(actor!=null && actor.getName().equals(actorName)){
+                return actor;
+            }
+        }
+        return null;
+    }
+
+    public boolean hasActorsAboveAge(int age){
+        for(Actor actor:actors){
+            if(actor!=null && actor.getAge()>age){
+                return true;
+            }
+        }
+        return false;
+    }
+
 }

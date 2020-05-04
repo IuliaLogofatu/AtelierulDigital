@@ -1,18 +1,26 @@
 package HomeworkWeek2;
 
 public class Actor {
-    protected String nume;
-    protected int varsta;
-    protected Premiu[] premiu;
+    private String name;
+    private Integer age;
+    private Premiu[] awards;
 
-    public Actor(String nume, int varsta, Premiu[] premiu) {
-        this.nume = nume;
-        this.varsta = varsta;
-        this.premiu = premiu;
+    public Actor(String name, Integer age, Premiu[] awards) {
+        this.name = name;
+        this.age = age;
+        this.awards = awards;
     }
 
-    public String toString() {
-        return "\n Numele actorului este: " + this.nume + "\n Varsta: " + this.varsta + "\n Premiul obtinu: " + this.premiu;
+    public String getName() {
+        return name;
     }
+
+    public Integer getAge() {
+        return age;
     }
+
+    public Premiu[] getAwards() {
+        return awards;
+    }
+}
 
